@@ -374,7 +374,7 @@ keymatch(char *arg, const char *keyword, int minchars)
   register int ca, ck;
   register int nmatched = 0;
 
-  while ((ca = *arg++) != '\0') {
+  while ((ca = (unsigned char)*arg++) != '\0') {
     if ((ck = *keyword++) == '\0')
       return 0;                 /* arg longer than keyword, no good */
     if (isupper(ca))            /* force arg to lcase (assume ck is already) */
